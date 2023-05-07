@@ -1,11 +1,11 @@
-name: deploy dev
+name: deploy prod
 
 on:
   push:
-    branches: [ dev ]
+    branches: [ master ]
 
 env:
-  APP_DEPLOYMENT_STAGE: dev
+  APP_DEPLOYMENT_STAGE: prod
 
 jobs:
   deploy:
@@ -44,4 +44,3 @@ jobs:
 
       - name: deploy to dev
         run: npm run deploy
-
