@@ -40,5 +40,5 @@ jobs:
         run: npm run test
 
       - name: deploy to dev
-        run: npm deploy
+        run: npm run deploy
 
