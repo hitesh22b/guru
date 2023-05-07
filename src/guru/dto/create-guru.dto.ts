@@ -7,6 +7,6 @@ export class CreateGuruDto implements CreateGuru {
     name!: string;
 
     @IsString()
-    @IsNotEmpty()h
+    @IsNotEmpty()
     designation!: string
 }
