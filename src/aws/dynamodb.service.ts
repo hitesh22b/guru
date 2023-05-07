@@ -16,6 +16,7 @@ import {GetUpdateExpression} from "./interfaces/db/get-update-expression";
 import {ConditionType} from "./enum/condtition-type.enum";
 import {ConditionExpression} from "./interfaces/db/input/condition-expression.interface";
 import {QueryRes} from "./interfaces/db/query-res.interface";
+import {ConfigService} from "@nestjs/config";
 
 @Injectable()
 export class DynamodbService {
@@ -24,12 +25,13 @@ export class DynamodbService {
 
     private readonly client: DynamoDBDocumentClient;
 
-    constructor() {
+    constructor(private readonly config: ConfigService) {
+        let region = this.config.get<string>('AWS_DEPLOYMENT_REGION');
         const marshallOptions = {
             convertClassInstanceToMap: true,
             removeUndefinedValues: true,
         };
-        let dynamoDbConfig: DynamoDBClientConfig = {region: 'ap-south-1'}
+        let dynamoDbConfig: DynamoDBClientConfig = { region }
         this.dynamodbClient = new DynamoDBClient(dynamoDbConfig);
         this.client = DynamoDBDocumentClient.from(this.dynamodbClient, {marshallOptions});
     }

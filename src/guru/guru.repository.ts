@@ -3,14 +3,15 @@ import {DynamodbService} from "../aws/dynamodb.service";
 import {CreateGuruItem, GetGuruItem, UpdateGuruItem} from "./interfaces/guru-item.interface";
 import {KeyCondition} from "../aws/interfaces/db";
 import {ConditionType} from "../aws/enum/condtition-type.enum";
+import {ConfigService} from "@nestjs/config";
 
 @Injectable()
 export class GuruRepository {
 
     private readonly tableName: string;
 
-    constructor(private readonly db: DynamodbService) {
-        this.tableName = 'guru'
+    constructor(private readonly db: DynamodbService, private readonly config: ConfigService) {
+        this.tableName = this.config.get<string>('TABLE_NAME');
     }
 
     public async insertItem(item: CreateGuruItem): Promise<void> {
