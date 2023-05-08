@@ -17,7 +17,7 @@ provider:
           Action:
             - dynamodb:*
           Resource:
-            - arn:aws:dynamodb:ap-south-1:118674338018:table/${self:service}
+            - arn:aws:dynamodb:ap-south-1:118674338018:table/${self:provider.environment.TABLE_NAME}
   environment:
     NODE_ENV: ${self:provider.stage}
     AWS_DEPLOYMENT_REGION: ${self:provider.region}
