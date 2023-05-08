@@ -3,7 +3,6 @@ import serverlessExpress from '@vendia/serverless-express';
 import {Callback, Context, Handler} from 'aws-lambda';
 import {AppModule} from './app.module';
 import {BadRequestException, ValidationError, ValidationPipe} from "@nestjs/common";
-
 let server: Handler;
 
 async function bootstrap(): Promise<Handler> {

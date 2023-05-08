@@ -12,7 +12,7 @@ export class GuruService {
 
     public async createGuru(createGuru: CreateGuru): Promise<void> {
         const item: CreateGuruItem = {
-            pk: 'gurus',
+            pk: 'gurus', // NOTE: Using a single dynamodb partition because the business use case permits us to do so
             sk: `guru:${uuidv4()}`,
             guruName: createGuru.name,
             designation: createGuru.designation
