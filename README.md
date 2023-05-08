@@ -28,4 +28,4 @@ $ npm run test:cov
 
 I am using Github Actions which is given a IAM role provided through an OIDC provider
 
-![Screenshot 2023-05-08 at 8.25.01 PM.png](..%2FDesktop%2FScreenshot%202023-05-08%20at%208.25.01%20PM.png)
+![Screenshot 2023-05-08 at 8.25.01 PM.png](screenshot.png)
