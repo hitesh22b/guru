@@ -39,7 +39,7 @@ jobs:
       - name: Build with Webpack
         run: npm run build
 
-      - name: run integration test
+      - name: run unit tests
         run: npm run test
 
       - name: deploy to dev

@@ -1,5 +1,5 @@
 ## Description
-A simple CRUD application using Serverless framework. In order to bring structure to the codebase i have used it along with Nestjs framework  https://nestjs.com/
+A simple CRUD application of gurus using Serverless framework. In order to bring structure to the codebase i have used it along with Nestjs framework  https://nestjs.com/
 ## Installation
 
 ```bash
