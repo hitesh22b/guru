@@ -37,7 +37,7 @@ jobs:
         run: npm ci
 
       - name: Build with Webpack
-        run: npm build
+        run: npm run build
 
       - name: run integration test
         run: npm run test
